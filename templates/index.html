@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <section class="hero wrap">
+    <p class="mono eyebrow">{{ ui.eyebrow_whoami }}</p>
+    <h1 class="hero__title">{{ profile.name }}</h1>
+    <p class="hero__role mono">{{ profile.role }}</p>
+    <p class="hero__tagline">{{ profile.tagline }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#projekty">{{ ui.cta_projects }}</a>
+      <a class="btn btn--ghost" href="#kontakt">{{ ui.cta_contact }}</a>
+    </div>
+  </section>
+
+  <section id="o-mnie" class="section">
+    <div class="wrap">
+      <p class="mono eyebrow">{{ ui.eyebrow_about }}</p>
+      <p class="about__text">{{ profile.bio }}</p>
+    </div>
+  </section>
+
+  <section id="umiejetnosci" class="section section--alt">
+    <div class="wrap">
+      <p class="mono eyebrow">{{ ui.eyebrow_skills }}</p>
+      <ul class="skills">
+        {% for skill in skills %}
+        <li class="skills__item">
+          <span class="skills__name mono">{{ skill.name }}</span>
+          <span class="skills__note">{{ skill.note }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section id="projekty" class="section">
+    <div class="wrap">
+      <p class="mono eyebrow">{{ ui.eyebrow_projects }}</p>
+      <div class="projects">
+        <div class="projects__head mono muted">
+          <span>{{ ui.table_id }}</span>
+          <span>{{ ui.table_project }}</span>
+          <span class="projects__head-tags">{{ ui.table_stack }}</span>
+          <span></span>
+        </div>
+        {% for p in projects %}
+        <a class="projects__row" href="{{ p.url }}" {% if p.url.startswith('http') %}target="_blank" rel="noopener"{% endif %}>
+          <span class="projects__id mono">{{ p.id }}</span>
+          <span class="projects__info">
+            <span class="projects__name">{{ p.name }}</span>
+            <span class="projects__desc">{{ p.desc }}</span>
+          </span>
+          <span class="projects__tags mono">
+            {% for tag in p.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+          </span>
+          <span class="projects__arrow mono" aria-hidden="true">-&gt;</span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="section section--alt">
+    <div class="wrap">
+      <p class="mono eyebrow">{{ ui.eyebrow_contact }}</p>
+      <div class="contact">
+        <a class="contact__row" href="mailto:{{ profile.email }}">
+          <span class="contact__label mono">{{ ui.label_email }}</span>
+          <span class="contact__value">{{ profile.email }}</span>
+        </a>
+        <a class="contact__row" href="{{ profile.linkedin }}" target="_blank" rel="noopener">
+          <span class="contact__label mono">{{ ui.label_linkedin }}</span>
+          <span class="contact__value">{{ profile.linkedin }}</span>
+        </a>
+        <a class="contact__row" href="{{ profile.github }}" target="_blank" rel="noopener">
+          <span class="contact__label mono">{{ ui.label_github }}</span>
+          <span class="contact__value">{{ profile.github }}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
