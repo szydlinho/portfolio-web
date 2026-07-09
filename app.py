@@ -2,23 +2,14 @@ from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
-# ---------------------------------------------------------------------------
-# TREŚĆ STRONY / SITE CONTENT
-# Edytuj poniższe dane, żeby zaktualizować zawartość witryny (PL i EN).
-# Nie musisz ruszać templates/ ani static/, żeby podmienić tekst.
-#
-# Pola bez podziału na pl/en (email, linkedin, github, url, tags, id) są
-# wspólne dla obu wersji językowych — edytujesz je raz.
-# ---------------------------------------------------------------------------
-
 PROFILE = {
     "name": "Paweł Szydlik",
-    "email": "kontakt@example.com",  # TODO: podmień na właściwy e-mail
+    "email": "pszydlik@gmail.com", 
     "linkedin": "https://pl.linkedin.com/in/pawel-szydlik-52baba146",
-    "github": "https://github.com/twoj-github",  # TODO: podmień
+    "github": "https://github.com/szydlinho/", 
     "role": {
-        "pl": "Analiza danych / Python & SQL",
-        "en": "Data analysis / Python & SQL",
+        "pl": "Analiza danych / Python & R & SQL",
+        "en": "Data analysis / Python & R & SQL",
     },
     "tagline": {
         "pl": (
@@ -32,13 +23,13 @@ PROFILE = {
     },
     "bio": {
         "pl": (
-            "Prowadzę jednoosobową działalność gospodarczą. Zajmuję się "
+            "Analityk danych z dowświadczeniem. Zajmuję się "
             "analizą danych, automatyzacją i budową aplikacji — od surowych "
             "danych po gotowe narzędzie, z którego można realnie korzystać."
         ),
         "en": (
-            "I run a sole proprietorship focused on data analysis, "
-            "automation and application development — turning raw data "
+            "Experienced data analyst. I work on "
+            "data analysis, automation and application development — turning raw data "
             "into a tool people can actually use."
         ),
     },
@@ -49,22 +40,22 @@ SKILLS = [
     {
         "name": "Python",
         "note": {
-            "pl": "pandas, Flask, automatyzacja, skrypty",
-            "en": "pandas, Flask, automation, scripting",
+            "pl": "pandas, Djano, automatyzacja, skrypty, API",
+            "en": "pandas, Django, automation, scripting, API",
         },
     },
     {
         "name": "R",
         "note": {
-            "pl": "analiza statystyczna, wizualizacja danych",
-            "en": "statistical analysis, data visualization",
+            "pl": "analiza statystyczna, wizualizacja danych, uczenie maszynowe",
+            "en": "statistical analysis, data visualization, machine learning",
         },
     },
     {
         "name": "SQL",
         "note": {
-            "pl": "projektowanie i optymalizacja zapytań",
-            "en": "query design and optimization",
+            "pl": "projektowanie i optymalizacja zapytań, funkcje analityczne, agregacje",
+            "en": "query design and optimization, analytical functions, aggregations",
         },
     },
 ]
@@ -73,7 +64,7 @@ SKILLS = [
 PROJECTS = [
     {
         "id": "01",
-        "url": "#",  # TODO: link do aplikacji
+        "url": "https://monitorportfela.pl",  # TODO: link do aplikacji
         "tags": ["Python", "Flask", "SQL"],
         "name": {
             "pl": "Aplikacja do zarządzania portfelem",
@@ -88,23 +79,10 @@ PROJECTS = [
         "id": "02",
         "url": "#",  # TODO: link do bloga
         "tags": ["Python", "R"],
-        "name": {"pl": "Blog", "en": "Blog"},
+        "name": {"pl": "Hobby Blog", "en": "Passion Blog"},
         "desc": {
-            "pl": "Notatki o danych, kodzie i analizie.",
-            "en": "Notes on data, code and analysis.",
-        },
-    },
-    {
-        "id": "03",
-        "url": "#",  # TODO: link
-        "tags": ["SQL"],
-        "name": {
-            "pl": "Nazwa kolejnego projektu",
-            "en": "Name of another project",
-        },
-        "desc": {
-            "pl": "Krótki opis tego, co robi projekt i jaki problem rozwiązuje.",
-            "en": "A short description of what it does and what it solves.",
+            "pl": "Notatki o danych, kodzie i analizie w piłce nożnej.",
+            "en": "Notes on data, code and analysis in football.",
         },
     },
 ]
