@@ -153,7 +153,7 @@ UI = {
 
 def render_page(lang: str):
     other_lang = "en" if lang == "pl" else "pl"
-    other_url = url_for("index_en") if lang == "pl" else url_for("index_pl")
+    other_endpoint = "index_en" if lang == "pl" else "index_pl"
 
     profile = {
         "name": PROFILE["name"],
@@ -185,7 +185,7 @@ def render_page(lang: str):
         ui=UI[lang],
         lang=lang,
         other_lang=other_lang,
-        other_url=other_url,
+        other_endpoint=other_endpoint,
     )
 
 

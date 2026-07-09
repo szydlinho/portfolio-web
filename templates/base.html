@@ -25,7 +25,7 @@
         <span class="lang-switch mono" aria-label="język / language">
           <span class="lang-switch__current">{{ lang | upper }}</span>
           <span class="lang-switch__sep">/</span>
-          <a class="lang-switch__link" href="{{ other_url }}">{{ other_lang | upper }}</a>
+          <a class="lang-switch__link" href="{{ url_for(other_endpoint) }}">{{ other_lang | upper }}</a>
         </span>
       </nav>
     </div>
