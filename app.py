@@ -77,7 +77,7 @@ PROJECTS = [
     },
     {
         "id": "02",
-        "url": "#",  # TODO: link do bloga
+        "url": "https://analizadanychwpilce.com",  # TODO: link do bloga
         "tags": ["Python", "R"],
         "name": {"pl": "Hobby Blog", "en": "Passion Blog"},
         "desc": {
