@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Wygenerowana statyczna wersja strony (buduje ją GitHub Actions)
+build/
+
+# macOS
+.DS_Store
+
+# Prywatne notatki, nie do publikacji w repo
+HOSTING_NOTES.md
